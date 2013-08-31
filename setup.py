@@ -1,9 +1,12 @@
-from distutils.core import setup
-from zibrato import __version__
+import os
+from setuptools import setup
+
+VERSION = {}
+execfile(os.path.join('zibrato', 'version.py'), VERSION)
 
 setup(
     name='Zibrato',
-    version=__version__,
+    version=VERSION['__version__'],
     author='Rob Martin @version2beta',
     author_email='rob@version2beta.com',
     packages=['zibrato', 'zibrato.tests'],
